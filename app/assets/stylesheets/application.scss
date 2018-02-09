@@ -21,6 +21,48 @@ body > ul {
   margin: 8px !important;
 }
 
+.depot_form {
+  fieldset {
+    background: #efe;
+
+    legend {
+      color: #dfd;
+      background: #141;
+      font-family: sans-serif;
+      padding: 0.2em 1em;
+    }
+
+    div {
+      margin-bottom: 0.3em;
+    }
+  }
+
+  form {
+    label {
+      width: 10em;
+      float: left;
+      text-align: right;
+      padding-top: 0.2em;
+      margin-right: 0.1em;
+      display: block;
+    }
+
+    input,
+    select,
+    textarea {
+      margin-left: 0.5em;
+    }
+
+    .actions {
+      margin-left: 10em;
+    }
+
+    br {
+      display: none;
+    }
+  }
+}
+
 #banner {
   position: relative;
   min-height: 40px;
@@ -65,6 +107,26 @@ body > ul {
   #side {
     padding: 1em 2em;
     background: #141;
+
+    div,
+    form {
+      display: inline;
+    }
+
+    input {
+      font-size: small;
+    }
+
+    #cart {
+      font-size: smaller;
+      color: white;
+
+      table {
+        border-top: 1px dotted #595;
+        border-bottom: 1px dotted #595;
+        margin-bottom: 10px;
+      }
+    }
 
     ul {
       padding: 0;

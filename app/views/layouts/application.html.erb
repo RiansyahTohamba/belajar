@@ -15,9 +15,18 @@
     </div>
     <div id="columns">
       <div id="side">
+
+        <% if @cart %>
+          
+          <%= show_cart(id: 'cart') do %>
+            <%= render @cart %>
+          <% end %>
+        <% end %>
+
+
         <ul>
           <li>
-            <a href="http://www....">Home</a>
+            <a href="/">Home</a>
           </li>
           <li>
             <a href="http://www..../faq">Questions</a>
