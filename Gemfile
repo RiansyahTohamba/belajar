@@ -48,7 +48,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'sqlite3'
-
 end
 
 group :development do
