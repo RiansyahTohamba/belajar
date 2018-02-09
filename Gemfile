@@ -34,7 +34,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 group :production do
-  gem 'pg'
+  gem 'pg','~> 0.18'
   gem 'rails_12factor'
   gem 'activerecord-postgresql-adapter'
 end
