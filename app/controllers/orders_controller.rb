@@ -91,6 +91,14 @@ class OrdersController < ApplicationController
       params.require(:order).permit(:name, :address, :email, :pay_type)
     end
 
+    def run_with_index_on_name
+      connection.add_index(:orders,:name)
+      begin
+        yield
+      ensure
+        connection.remove_index(:orders,:name)
+      end
+    end
     def ensure_cart_isnt_empty
         if @cart.line_items.empty?
           redirect_to store_index_url, notice: 'Your cart is empty'

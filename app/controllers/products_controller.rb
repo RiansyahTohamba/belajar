@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = Product.new.list_with_index
   end
 
   def who_bought
@@ -73,6 +73,8 @@ class ProductsController < ApplicationController
   end
 
   private
+
+
 
   # Use callbacks to share common setup or constraints between actions.
   def set_product

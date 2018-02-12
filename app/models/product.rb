@@ -10,7 +10,11 @@ class Product < ApplicationRecord
     /\.(gif|jpg|png)\Z/i,
     message: 'must be a URL for GIF, JPG or PNG image.'
   }
-
+  def list_with_index
+    run_with_index_on_title do
+       Product.all
+    end
+  end
   private
 
   # ensure that there are no line items referencing this product
@@ -18,6 +22,14 @@ class Product < ApplicationRecord
     unless line_items.empty?
       errors.add(:base, 'Line Items present')
       throw :abort
+    end
+  end
+  def run_with_index_on_title
+    self.class.connection.add_index(:products, :title)
+    begin
+      yield
+    ensure
+      self.class.connection.remove_index(:products, :title)
     end
   end
 end

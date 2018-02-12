@@ -1,0 +1,19 @@
+h1 Listing rians
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @rians.each do |rian|
+      tr
+        td = link_to 'Show', rian
+        td = link_to 'Edit', edit_rian_path(rian)
+        td = link_to 'Destroy', rian, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Rian', new_rian_path
